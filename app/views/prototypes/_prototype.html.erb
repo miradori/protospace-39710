@@ -1,0 +1,17 @@
+<div class="card">
+  <%# <%= link_to '/prototypes' do %>
+    <%# <%= image_tag prototype.image.variant(resize: '500x500'), class: :card__img if prototype.image.attached? %> 
+    <%# <%= "プロトタイプの画像" %> 
+  <%# <% end %> 
+  <%= link_to image_tag(prototype.image, class: :card__img ), prototype_path(prototype.id) %>
+  <%# <%= link_to image_tag(prototype.image, class: 'card__img' ), root_path %> 
+  <div class="card__body">
+    <%= link_to prototype.title, prototype_path(prototype.id), class: :card__title%>
+    <div class="card__summary">
+      <%= prototype.catch_copy %>
+    </div>
+    <%= link_to "by #{prototype.user.name}", user_path(prototype.user_id), class: :card__user %>
+  </div>
+</div>
+
+<%# #prototype_path(@prototype.id) current_user.name#{prototypes.catch_copy}%>
